@@ -5,34 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#050505" />
 
-  <!-- FAVICON -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <title>Spider-Man 4: The Buzzard's Revenge | Fan Film — Excelsior Studios</title>
 
-  <!-- SEO + Social -->
   <meta name="description" content="Fan film: Spider-Man 4 — The Buzzard's Revenge. A cinematic short based on a fan script. Non-commercial fan project." />
   <link rel="canonical" href="https://excelsiorfan.work/" />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="SPIDER-MAN 4 — The Buzzard's Revenge (Fan Film)" />
   <meta property="og:description" content="Fan film short and script highlights from Excelsior Studios. Non-commercial fan project." />
   <meta property="og:url" content="https://excelsiorfan.work/" />
   <meta property="og:image" content="/1000001231.webp" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="SPIDER-MAN 4 — The Buzzard's Revenge" />
   <meta name="twitter:description" content="Fan film: script excerpts, characters, and teaser trailer." />
   <meta name="twitter:image" content="/1000001231.webp" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" href="/1000001231.webp" as="image" />
 
-  <!-- Tailwind (with aspect-ratio plugin) -->
   <script>
     tailwind.config = {
       plugins: [tailwindcssAspectRatio],
@@ -123,20 +117,21 @@
     pre {
       white-space: pre-wrap;
       background: rgba(0,0,0,0.35);
-      padding: 1rem;
+      padding: 1.5rem;
       border-radius: 0.5rem;
       line-height: 1.55;
+      font-family: 'Courier New', Courier, monospace;
+      color: #e5e7eb;
+      border-left: 2px solid #555;
     }
   </style>
 </head>
 <body class="bg-hero web-bg min-h-screen flex flex-col" data-page="home">
 
-  <!-- Skip link -->
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-black focus:px-3 focus:py-2 focus:rounded focus:text-white">
     Skip to content
   </a>
 
-  <!-- NAVIGATION -->
   <nav class="fixed w-full z-50 bg-black/90 border-b border-red-900/20" role="navigation">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
@@ -158,7 +153,6 @@
           </div>
         </div>
 
-        <!-- Mobile Button -->
         <button id="mobile-toggle" aria-expanded="false" aria-controls="mobile-menu"
           class="md:hidden p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700">
           <svg id="mobile-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor">
@@ -183,7 +177,6 @@
 
   <main id="main" class="flex-1">
 
-    <!-- HERO -->
     <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       <div class="absolute inset-0 z-0">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-red-900/20 rounded-full blur-[130px]"></div>
@@ -222,7 +215,6 @@
       </div>
     </section>
 
-    <!-- STORY (REPLACED WITH COMPLETED VERSION) -->
     <section id="story" class="py-20 border-t border-gray-900">
       <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
 
@@ -266,7 +258,6 @@
       </div>
     </section>
 
-    <!-- SCRIPT HIGHLIGHTS -->
     <section id="script" class="py-20">
       <div class="max-w-4xl mx-auto px-4">
 
@@ -275,10 +266,42 @@
           <div class="w-16 h-1 bg-red-800 mx-auto"></div>
         </div>
 
+        <div class="mb-12">
+          <h3 class="text-xl text-red-400 font-bold mb-4">Scene: The Parker Dining Room</h3>
+          <pre>
+PETER PARKER (38) sits at the head of the table...
+He tries to discreetly catch a pea flicked by BENJY (7).
+A tiny THWIP and he snags it midair without looking.
+MJ sees. She doesn’t scold him. She just raises an eyebrow.
+
+MJ
+Peter. We talked about this. Not at the table.
+
+PETER
+(innocent, slightly awkward)
+I didn’t do it. It was... a reflex. Honestly. Total accident.</pre>
+        </div>
+
+        <div>
+          <h3 class="text-xl text-red-400 font-bold mb-4">Scene: NYC Rooftop - The Ambush</h3>
+          <pre>
+WHAM! Spider-Man is ripped from the roof, dragged across gravel, and thrown into the open sky.
+
+SPIDER-MAN
+(struggling, genuinely confused)
+Hey—! Whoa, hold on! Sir! You’re gonna tear your hydraulics flying this fast!
+
+VULTURE
+(voice amplified, cold)
+Stop moving.
+
+SPIDER-MAN
+Look, I don’t know who you are, but this is dangerous! That harness isn't stabilized! You're gonna hurt yourself!</pre>
+        </div>
+
       </div>
     </section>
 
-    <!-- CAST -->
     <section id="cast" class="py-20 border-t border-gray-900">
       <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-12">
@@ -287,11 +310,32 @@
         </div>
 
         <ul class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <li class="glass-panel p-6 rounded-lg border-t-2 border-red-800 hover:-translate-y-1 transition duration-300">
+            <h3 class="text-2xl font-bold text-white mb-1">PETER PARKER</h3>
+            <p class="text-red-500 text-sm tracking-widest font-bold mb-4 uppercase">The Veteran</p>
+            <p class="text-gray-300 italic mb-4">"I'm just a guy trying to get home to his wife."</p>
+            <p class="text-gray-400 text-sm">Age 38. Graying. Alert.</p>
+          </li>
+
+          <li class="glass-panel p-6 rounded-lg border-t-2 border-gray-600 hover:-translate-y-1 transition duration-300">
+            <h3 class="text-2xl font-bold text-white mb-1">ADRIAN TOOMES</h3>
+            <p class="text-red-500 text-sm tracking-widest font-bold mb-4 uppercase">The Creator</p>
+            <p class="text-gray-300 italic mb-4">"You are intellectual property. And I am recalling the product."</p>
+            <p class="text-gray-400 text-sm">Former Oscorp Geneticist.</p>
+          </li>
+
+          <li class="glass-panel p-6 rounded-lg border-t-2 border-red-800 hover:-translate-y-1 transition duration-300">
+            <h3 class="text-2xl font-bold text-white mb-1">MARY JANE</h3>
+            <p class="text-red-500 text-sm tracking-widest font-bold mb-4 uppercase">The Anchor</p>
+            <p class="text-gray-300 italic mb-4">Knows the weight of the mask better than anyone.</p>
+            <p class="text-gray-400 text-sm">Mother to Benjy (7) and May (5).</p>
+          </li>
+
         </ul>
       </div>
     </section>
 
-    <!-- TRAILER -->
     <section id="trailer" class="py-20">
       <div class="max-w-5xl mx-auto px-4 text-center">
 
@@ -311,7 +355,6 @@
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="glass-panel py-12 border-t border-gray-900 mt-12">
     <div class="max-w-7xl mx-auto px-4 text-center">
 
@@ -330,7 +373,6 @@
     </div>
   </footer>
 
-  <!-- JS -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
