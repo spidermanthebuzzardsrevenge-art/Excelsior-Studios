@@ -9,58 +9,56 @@
   <!-- SEO + Social -->
   <meta name="description" content="Fan film: Spider-Man 4 — The Buzzard's Revenge. A cinematic short based on a fan script. Non-commercial fan project.">
   <link rel="canonical" href="https://excelsiorfan.work/">
-  <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="SPIDER-MAN 4 — The Buzzard's Revenge (Fan Film)">
   <meta property="og:description" content="Fan film short and script highlights from Excelsior Studios. Non-commercial fan project.">
-  <meta property="og:url" content="https://excelsiorfan.work/">
   <meta property="og:image" content="/1000001231.webp">
 
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SPIDER-MAN 4 — The Buzzard's Revenge">
   <meta name="twitter:description" content="Fan film: script excerpts, characters, and teaser trailer.">
   <meta name="twitter:image" content="/1000001231.webp">
 
-  <!-- Preconnects & fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+  <!-- Fonts -->
   <link rel="preload" href="/1000001231.webp" as="image">
   <link rel="preload" href="/Homoarakhan.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/Homoarakhan.woff" as="font" type="font/woff" crossorigin>
 
   <!-- Tailwind -->
   <script defer src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
 
-  <!-- Local Styles -->
   <style>
     @font-face {
       font-family: 'Homoarakhan';
-      src: local('Homoarakhan'), local('Homoarakhan-Regular'),
-           url('/Homoarakhan.woff2') format('woff2'),
+      src: url('/Homoarakhan.woff2') format('woff2'),
            url('/Homoarakhan.woff') format('woff');
       font-display: swap;
     }
 
-    .font-hero, .logo-text, .hero-title, h1.hero-title {
-      font-family: 'Homoarakhan', sans-serif;
-    }
-
     body {
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background: url('1000001231.webp') no-repeat center center fixed;
+      font-family: system-ui, sans-serif;
+      background: url('/1000001231.webp') no-repeat center center fixed;
       background-size: cover;
       color: white;
     }
 
-    nav a {
-      position: relative;
-      text-decoration: none;
-      color: white;
+    .glass-panel {
+      background: rgba(10,12,15,0.62);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.06);
     }
+
+    .hero-title,
+    .font-hero,
+    .logo-text {
+      font-family: 'Homoarakhan', sans-serif;
+      color: #CC0000;
+    }
+
+    nav a { position: relative; }
     nav a::after {
       content: "";
       position: absolute;
@@ -68,37 +66,108 @@
       bottom: -2px;
       width: 100%;
       height: 2px;
-      background: var(--primary-red-2);
+      background: #CC0000;
       transform: scaleX(0);
-      transition: transform 0.25s ease;
+      transition: 0.25s ease;
     }
-    nav a:hover::after {
-      transform: scaleX(1);
-    }
-
-    :root{
-      --bg-dark: #000000;
-      --primary-red: #8B0000;
-      --primary-red-2: #CC0000;
-      --accent-blue: #0b2545;
-      --muted: #9CA3AF;
-      --card-glass: rgba(10,12,15,0.62);
-      --glass-border: rgba(255,255,255,0.06);
-      --metallic-sheen: linear-gradient(180deg,#ffffff 0%,#d4d4d4 40%,#8a8a8a 60%);
-    }
+    nav a:hover::after { transform: scaleX(1); }
 
     .raimi-title {
-      background: var(--metallic-sheen);
+      background: linear-gradient(180deg,#fff,#d4d4d4 40%,#8a8a8a 60%);
       -webkit-background-clip: text;
-      background-clip: text;
       color: transparent;
-      filter: drop-shadow(0 0 6px rgba(0,0,0,0.7));
     }
-
-    .glass-panel {
-      background: var(--card-glass);
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--glass-border);
-    }
-
   </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+<!-- NAV -->
+<nav class="fixed w-full z-50 bg-black/90 border-b border-red-900/20 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+
+      <div class="flex items-center gap-3">
+        <svg width="36" height="36" fill="none"><path d="M12 2v20M2 12h20" stroke="#8B0000" stroke-width="1.5"/></svg>
+
+        <!-- FIXED -->
+        <a href="#home" class="logo-text text-2xl tracking-wide">
+          EXCELSIOR STUDIOS
+        </a>
+      </div>
+
+      <div class="hidden md:flex space-x-10 text-lg">
+        <a href="#about">About</a>
+        <a href="#cast">Cast</a>
+        <a href="#script">Script</a>
+        <a href="#trailer">Trailer</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- HERO -->
+<section id="home" class="min-h-screen flex items-center justify-center text-center px-6">
+  <div class="glass-panel p-10 rounded-2xl max-w-3xl">
+    <h1 class="hero-title text-5xl mb-4 raimi-title">SPIDER-MAN 4</h1>
+    <p class="text-xl text-gray-300">THE BUZZARD’S REVENGE</p>
+  </div>
+</section>
+
+<!-- RESTORED SECTIONS -->
+
+<section id="about" class="py-20 px-6">
+  <div class="glass-panel max-w-4xl mx-auto p-10 rounded-xl">
+    <h2 class="font-hero text-3xl mb-4">About</h2>
+    <p class="text-gray-300">A non-commercial fan-made Spider-Man 4 project.</p>
+  </div>
+</section>
+
+<section id="cast" class="py-20 px-6">
+  <div class="glass-panel max-w-4xl mx-auto p-10 rounded-xl">
+    <h2 class="font-hero text-3xl mb-4">Cast</h2>
+    <p class="text-gray-300">Cast list coming soon.</p>
+  </div>
+</section>
+
+<section id="script" class="py-20 px-6">
+  <div class="glass-panel max-w-4xl mx-auto p-10 rounded-xl">
+    <h2 class="font-hero text-3xl mb-4">Script</h2>
+    <p class="text-gray-300">Act I preview coming soon.</p>
+  </div>
+</section>
+
+<section id="trailer" class="py-20 px-6">
+  <div class="glass-panel max-w-4xl mx-auto p-10 rounded-xl">
+    <h2 class="font-hero text-3xl mb-4">Trailer</h2>
+    <p class="text-gray-300">Trailer will be posted here.</p>
+  </div>
+</section>
+
+<section id="contact" class="py-20 px-6">
+  <div class="glass-panel max-w-4xl mx-auto p-10 rounded-xl">
+    <h2 class="font-hero text-3xl mb-4">Contact</h2>
+    <p class="text-gray-300">Reach out through the campaign page.</p>
+  </div>
+</section>
+
+</main>
+
+<script>
+  // Smooth scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const t=document.querySelector(a.getAttribute('href'));
+      if(!t)return;
+      e.preventDefault();
+      t.scrollIntoView({behavior:"smooth"});
+    });
+  });
+</script>
+
+</body>
+</html>
