@@ -36,35 +36,18 @@
 
   <!-- Local optional font (falls back to Cinzel if not available) -->
   <style>
-    @font-face{font-family:'Homoarakhan';src:url('homoarakhan.ttf') format('truetype');font-display:swap}
-    :root{--bg:#050505;--muted:#9CA3AF;--accent:#8B0000;--accent-2:#cc0000}
-    html,body{height:100%}
-
-    /* Critical CSS kept small for fast paint */
-    body{font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.5;background-color:var(--bg);color:#e6e6e6;-webkit-font-smoothing:antialiased}
-
-    .raimi-title{background:linear-gradient(180deg,#fff 0%,#cfcfcf 40%,#8a8a8a 60%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 6px rgba(0,0,0,0.7))}
-    .glass-panel{background:rgba(12,12,12,0.55);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.04)}
-    .script-text{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-
-    /* Hero background with fallback color */
-    .web-bg{background:linear-gradient(rgba(5,5,5,0.6),rgba(5,5,5,0.9)),url('/1000001231.webp') center/cover fixed no-repeat}
-
-    /* Floating emblem animation */
-    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
-    .floating-emblem{animation:float 6s ease-in-out infinite}
-
-    /* Accessibility helpers */
-    .focus-outline:focus{outline:3px solid rgba(203,50,50,0.6);outline-offset:2px}
-
-    /* Mobile nav hide/show handled by Tailwind classes and small JS */
-  </style>
-
-  <!-- JSON-LD structured data -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"CreativeWork","name":"SPIDER-MAN 4: The Buzzard's Revenge (Fan Film)","author":{"@type":"Organization","name":"Excelsior Studios"},"description":"Fan film short and script excerpts. Non-commercial fan project.","url":"https://excelsiorfan.work/"}
-  </script>
-
+    @font-face {
+            font-family: 'Homoarakhan';
+            src: url('/Homoarakhan.woff2') format('woff2'),
+                 url('/Homoarakhan.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        body {
+            font-family: 'Homoarakhan', sans-serif;
+        }
+    </style>
 </head>
 <body class="web-bg min-h-screen flex flex-col" data-page="home">
 
