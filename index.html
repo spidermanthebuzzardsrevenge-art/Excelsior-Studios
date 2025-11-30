@@ -51,23 +51,44 @@
 body {
             font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
-    </style>
+      /* Navbar underline animation */
+  nav a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+  }
+  nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-red-2);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease;
+  }
+  nav a:hover::after {
+    transform: scaleX(1);
+  }
+</style>
   
   <style>
     /* Unified color system */
     :root{
-      --bg-dark: #050505;           /* page background */
-      --primary-red: #8B0000;      /* main Raimi red */
-      --primary-red-2: #CC0000;    /* brighter accent red */
-      --accent-blue: #0b2545;      /* deep navy for contrast */
-      --muted: #9CA3AF;            /* neutral text */
+      --bg-dark: #000000;           /* pure black background */
+      --primary-red: #8B0000;
+      --primary-red-2: #CC0000;
+      --accent-blue: #0b2545;
+      --muted: #9CA3AF;
       --card-glass: rgba(10,12,15,0.62);
       --glass-border: rgba(255,255,255,0.06);
       --metallic-sheen: linear-gradient(180deg,#ffffff 0%,#d4d4d4 40%,#8a8a8a 60%);
     }
 
     /* Apply background / body color consistently */
-    body{background-color:var(--bg-dark);color:#e6e6e6}
+    body{background-color:var(--bg-dark);color:#ffffff}
 
     /* Title / logo styling */
     .raimi-title{background:var(--metallic-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 6px rgba(0,0,0,0.7))}
@@ -115,7 +136,7 @@ body {
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-black focus:px-3 focus:py-2 focus:rounded focus:text-white">Skip to content</a>
 
   <!-- NAVIGATION -->
-  <nav class="fixed w-full z-50 transition-all duration-300 bg-black/90 border-b border-red-900/20" role="navigation" aria-label="Main Navigation">
+  <nav class="text-white" class="fixed w-full z-50 transition-all duration-300 bg-black/90 border-b border-red-900/20" role="navigation" aria-label="Main Navigation">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         <div class="flex-shrink-0 flex items-center gap-3">
