@@ -17,15 +17,15 @@
   <meta property="og:title" content="SPIDER-MAN 4 — The Buzzard's Revenge (Fan Film)" />
   <meta property="og:description" content="Fan film short and script highlights from Excelsior Studios. Non-commercial fan project." />
   <meta property="og:url" content="https://excelsiorfan.work/" />
-  <meta property="og:image" content="https://excelsiorfan.work/1000001231.webp" />
+  <meta property="og:image" content="https://excelsiorfan.work/1000001259.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="SPIDER-MAN 4 — The Buzzard's Revenge" />
   <meta name="twitter:description" content="Fan film: script excerpts, characters, and teaser trailer." />
-  <meta name="twitter:image" content="https://excelsiorfan.work/1000001231.webp" />
+  <meta name="twitter:image" content="https://excelsiorfan.work/1000001259.jpg" />
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="1000001231.webp" as="image" />
+  <link rel="preload" href="1000001259.jpg" as="image" />
 
   <script>
     tailwind.config = {
@@ -67,9 +67,9 @@
     }
 
     .bg-hero {
-      /* FIXED: Pointing to file in root directory */
-      background-image: url('1000001231.webp');
-      background-position: center;
+      /* FIXED: Pointing to the NEW image file */
+      background-image: url('1000001259.jpg');
+      background-position: center top; /* Added 'top' so his head doesn't get cut off on mobile */
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -335,7 +335,7 @@ Look, I don’t know who you are, but this is dangerous! That harness isn't stab
         <div class="w-16 h-1 bg-red-800 mx-auto mb-8"></div>
 
         <div class="relative w-full aspect-video rounded-lg overflow-hidden border border-red-900/30 shadow-2xl bg-black">
-          <div class="absolute inset-0 bg-cover bg-center blur-sm opacity-40 scale-105" style="background-image: url('1000001231.webp');"></div>
+          <div class="absolute inset-0 bg-cover bg-center blur-sm opacity-40 scale-105" style="background-image: url('1000001259.jpg');"></div>
           
           <div class="absolute inset-0 flex flex-col items-center justify-center z-10">
             <div class="p-8 border border-white/10 bg-black/60 backdrop-blur-md rounded-xl shadow-lg">
@@ -364,3 +364,31 @@ Look, I don’t know who you are, but this is dangerous! That harness isn't stab
       <div class="opacity-60 mb-2 flex justify-center items-center gap-2">
         <span class="text-gray-400 font-bold">THE BUZZARD'S REVENGE</span>
       </div>
+
+      <p class="text-gray-500 text-xs mb-2">
+        DISCLAIMER: Non-profit fan film. Spider-Man © Marvel & Sony.
+      </p>
+      <p class="text-gray-500 text-xs">&copy; <span id="year"></span> Excelsior Studios.</p>
+
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const toggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const openIcon = document.getElementById('mobile-open');
+    const closeIcon = document.getElementById('mobile-close');
+
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('hidden');
+      openIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
