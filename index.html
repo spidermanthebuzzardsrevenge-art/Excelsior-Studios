@@ -4,14 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#050505" />
-  <title>Spider-Man 4: The Buzzard's Revenge | Fan Film — Excelsior Studios</title>
 
-  <!-- FAVICONS -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="manifest" href="/site.webmanifest">
+  <!-- FAVICON -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <title>Spider-Man 4: The Buzzard's Revenge | Fan Film — Excelsior Studios</title>
 
   <!-- SEO + Social -->
   <meta name="description" content="Fan film: Spider-Man 4 — The Buzzard's Revenge. A cinematic short based on a fan script. Non-commercial fan project." />
@@ -132,3 +129,207 @@
     }
   </style>
 </head>
+<body class="bg-hero web-bg min-h-screen flex flex-col" data-page="home">
+
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-black focus:px-3 focus:py-2 focus:rounded focus:text-white">
+    Skip to content
+  </a>
+
+  <!-- NAVIGATION -->
+  <nav class="fixed w-full z-50 bg-black/90 border-b border-red-900/20" role="navigation">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+
+        <div class="flex items-center gap-3">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2v20M2 12h20" stroke="#8B0000" stroke-width="1.5" opacity="0.95"/>
+          </svg>
+          <a href="#home" class="raimi-title text-lg md:text-xl font-black tracking-widest">SPIDER-MAN 4</a>
+        </div>
+
+        <div class="hidden md:block">
+          <div class="flex space-x-6">
+            <a href="#home" class="px-3 py-2 text-sm font-medium hover:text-red-400">Home</a>
+            <a href="#story" class="px-3 py-2 text-sm font-medium hover:text-red-400">Synopsis</a>
+            <a href="#script" class="px-3 py-2 text-sm font-medium hover:text-red-400">Script</a>
+            <a href="#cast" class="px-3 py-2 text-sm font-medium hover:text-red-400">Characters</a>
+            <a href="#trailer" class="px-3 py-2 text-sm font-medium hover:text-red-400">Trailer</a>
+          </div>
+        </div>
+
+        <!-- Mobile Button -->
+        <button id="mobile-toggle" aria-expanded="false" aria-controls="mobile-menu"
+          class="md:hidden p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700">
+          <svg id="mobile-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/>
+          </svg>
+          <svg id="mobile-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-black/95 border-t border-red-900/20">
+      <a href="#home" class="block px-3 py-2 text-base">Home</a>
+      <a href="#story" class="block px-3 py-2 text-base">Synopsis</a>
+      <a href="#script" class="block px-3 py-2 text-base">Script</a>
+      <a href="#cast" class="block px-3 py-2 text-base">Characters</a>
+      <a href="#trailer" class="block px-3 py-2 text-base">Trailer</a>
+    </div>
+  </nav>
+
+  <main id="main" class="flex-1">
+
+    <!-- HERO -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-red-900/20 rounded-full blur-[130px]"></div>
+      </div>
+
+      <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+        <div class="mb-6 flex justify-center">
+          <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#8B0000" stroke-width="1">
+            <circle cx="12" cy="12" r="6" fill="#8B0000" fill-opacity="0.18"></circle>
+            <path d="M12 8V16M8 12H16" stroke="#fff" stroke-width="1.6"/>
+          </svg>
+        </div>
+
+        <p class="text-red-500 tracking-[0.3em] text-sm md:text-lg mb-2 uppercase font-bold">
+          The Legend Returns
+        </p>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-2 raimi-title">
+          SPIDER-MAN <span class="text-red-600">4</span>
+        </h1>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-200 mb-6">
+          THE BUZZARD'S REVENGE
+        </h2>
+
+        <p class="text-lg md:text-xl text-gray-400 mb-6 italic max-w-2xl mx-auto">
+          "You aren't a hero. You're intellectual property."
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="#trailer" class="inline-flex items-center gap-3 bg-red-800 text-white px-6 py-3 rounded-md hover:scale-105 transition">
+            WATCH TEASER
+          </a>
+          <a href="#script" class="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-gray-700 hover:bg-white/5">
+            Read Script Excerpt
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section id="story" class="py-20 border-t border-gray-900">
+      <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
+
+        <div class="glass-panel p-8 rounded-lg border-l-4 border-red-800">
+          <h3 class="text-2xl text-white mb-4">A FATHER'S FIGHT</h3>
+          <p class="text-gray-400 mb-6">Peter Parker is 38…</p>
+          <p class="text-gray-400 mb-6">But the silence of retirement ends with a scream of Spider-sense — not a ring, a headache.</p>
+          <p class="text-gray-400">Adrian Toomes has returned… coming to “recall the product.”</p>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="h-px w-12 bg-red-600"></div>
+            <span class="text-red-500 uppercase tracking-widest text-sm font-bold">The Synopsis</span>
+          </div>
+
+          <h2 class="text-4xl font-bold mb-6">TIME TO COME <span class="text-red-600">HOME</span></h2>
+
+          <p class="text-xl text-gray-300 italic border-l-2 border-gray-700 pl-6 my-8">"Years after retiring…"</p>
+          <p class="text-gray-500 text-lg">With his world collapsing…</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SCRIPT HIGHLIGHTS -->
+    <section id="script" class="py-20">
+      <div class="max-w-4xl mx-auto px-4">
+
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-2">SCRIPT HIGHLIGHTS</h2>
+          <div class="w-16 h-1 bg-red-800 mx-auto"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CAST -->
+    <section id="cast" class="py-20 border-t border-gray-900">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-5xl font-bold mb-4">THE CAST</h2>
+          <div class="w-24 h-1 bg-red-800 mx-auto"></div>
+        </div>
+
+        <ul class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Placeholder for cast cards -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- TRAILER -->
+    <section id="trailer" class="py-20">
+      <div class="max-w-5xl mx-auto px-4 text-center">
+
+        <h2 class="text-3xl font-bold mb-2">OFFICIAL TEASER</h2>
+        <div class="w-16 h-1 bg-red-800 mx-auto mb-8"></div>
+
+        <!-- FIXED ASPECT RATIO -->
+        <div class="aspect-w-16 aspect-h-9 glass-panel p-2 rounded-lg">
+          <iframe class="w-full h-full rounded-lg" src="https://www.youtube.com/embed/VIDEO_ID?rel=0&modestbranding=1" allowfullscreen></iframe>
+        </div>
+
+        <a href="https://www.indiegogo.com/" class="inline-block mt-6 px-6 py-3 bg-red-700 text-white rounded-md">
+          Support the Campaign
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="glass-panel py-12 border-t border-gray-900 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+
+      <div class="opacity-60 mb-2 flex justify-center items-center gap-2">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2v20M2 12h20" stroke="#9CA3AF" stroke-width="1.2"/>
+        </svg>
+        <span class="text-gray-400 font-bold">THE BUZZARD'S REVENGE</span>
+      </div>
+
+      <p class="text-gray-500 text-xs mb-2">
+        DISCLAIMER: Non-profit fan film. Spider-Man © Marvel & Sony.
+      </p>
+      <p class="text-gray-500 text-xs">&copy; <span id="year"></span> Excelsior Studios.</p>
+
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const toggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const openIcon = document.getElementById('mobile-open');
+    const closeIcon = document.getElementById('mobile-close');
+
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('hidden');
+      openIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
