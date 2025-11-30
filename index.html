@@ -11,14 +11,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
     <style>
         /* INSTRUCTIONS FOR CUSTOM FONT:
-           1. Download 'Homoarakhan' from dafont.com
-           2. Create a folder named 'fonts' in the same directory as this HTML file.
-           3. Put the 'homoarakhan.ttf' file inside that folder.
-           4. The site will automatically switch to the correct Spider-Man font.
+           1. Upload 'homoarakhan.ttf' to the SAME folder as this file.
+           2. No 'fonts' folder needed anymore.
         */
         @font-face {
             font-family: 'Homoarakhan';
-            src: url('fonts/homoarakhan.ttf') format('truetype');
+            /* Updated path: looks for file in the same folder */
+            src: url('homoarakhan.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -45,14 +44,18 @@
             font-family: 'Cinzel', serif;
         }
 
-        /* Custom Web Background Pattern */
+        /* BACKGROUND IMAGE INSTRUCTIONS:
+           The line below uses a placeholder image so you can see the effect in the preview.
+           
+           WHEN YOU DOWNLOAD THE FILE:
+           Change the url to your file name like this:
+           
+           background: linear-gradient(rgba(5, 5, 5, 0.6), rgba(5, 5, 5, 0.9)), url('1000001231.webp') no-repeat center center fixed;
+        */
         .web-bg {
-            background-color: #050505;
-            background-image: 
-                radial-gradient(circle at 50% 50%, rgba(20, 20, 20, 0.8) 0%, rgba(5, 5, 5, 1) 100%),
-                repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(139, 0, 0, 0.05) 50px),
-                repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(139, 0, 0, 0.05) 50px);
-            background-size: 100% 100%, 100px 100px, 100px 100px;
+            /* Placeholder image for preview purposes */
+            background: linear-gradient(rgba(5, 5, 5, 0.6), rgba(5, 5, 5, 0.9)), url('https://images.unsplash.com/photo-1604147495798-57beb5d6af88?q=80&w=2070&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover;
         }
 
         /* Raimi Metallic Title Effect */
@@ -134,7 +137,6 @@
     <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <!-- Abstract Background Elements -->
         <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-90"></div>
             <!-- Dynamic reddish glow -->
             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-900/20 rounded-full blur-[120px]"></div>
         </div>
@@ -176,7 +178,7 @@
     </section>
 
     <!-- Story Section -->
-    <section id="story" class="py-20 bg-gradient-to-b from-black to-[#0a0a0a] relative border-t border-gray-900">
+    <section id="story" class="py-20 relative border-t border-gray-900">
         <div class="max-w-6xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                 
@@ -213,7 +215,7 @@
     </section>
 
     <!-- Script Excerpt Section -->
-    <section id="script" class="py-20 bg-[#080808]">
+    <section id="script" class="py-20">
         <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold cinematic-font mb-2 text-white">SCRIPT HIGHLIGHTS</h2>
@@ -221,7 +223,7 @@
             </div>
 
             <!-- Script Block 1 -->
-            <div class="bg-black border border-gray-800 p-6 md:p-10 rounded-sm shadow-2xl mb-8 relative overflow-hidden group">
+            <div class="glass-panel border border-gray-800 p-6 md:p-10 rounded-sm shadow-2xl mb-8 relative overflow-hidden group">
                 <div class="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-40 transition-opacity">
                     <i data-lucide="utensils" class="w-12 h-12 text-white"></i>
                 </div>
@@ -250,7 +252,7 @@
             </div>
 
             <!-- Script Block 2 -->
-            <div class="bg-black border border-gray-800 p-6 md:p-10 rounded-sm shadow-2xl relative overflow-hidden group">
+            <div class="glass-panel border border-gray-800 p-6 md:p-10 rounded-sm shadow-2xl relative overflow-hidden group">
                 <div class="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-40 transition-opacity">
                     <i data-lucide="feather" class="w-12 h-12 text-red-600"></i>
                 </div>
@@ -287,7 +289,7 @@
     </section>
 
     <!-- Characters/Cast Section -->
-    <section id="cast" class="py-20 bg-[#050505] border-t border-gray-900">
+    <section id="cast" class="py-20 border-t border-gray-900">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-5xl font-bold cinematic-font mb-4">THE CAST</h2>
@@ -332,7 +334,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black py-12 border-t border-gray-900">
+    <footer class="glass-panel py-12 border-t border-gray-900">
         <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
             <div class="flex items-center gap-2 mb-6 opacity-50">
                 <i data-lucide="spider" class="h-6 w-6 text-gray-400"></i>
