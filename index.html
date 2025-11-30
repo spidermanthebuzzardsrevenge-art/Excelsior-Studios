@@ -1,234 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#050505">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#050505" />
   <title>Spider-Man 4: The Buzzard's Revenge | Fan Film — Excelsior Studios</title>
 
+  <!-- SEO + Social -->
+  <meta name="description" content="Fan film: Spider-Man 4 — The Buzzard's Revenge. A cinematic short based on a fan script. Non-commercial fan project." />
+  <link rel="canonical" href="https://excelsiorfan.work/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SPIDER-MAN 4 — The Buzzard's Revenge (Fan Film)" />
+  <meta property="og:description" content="Fan film short and script highlights from Excelsior Studios. Non-commercial fan project." />
+  <meta property="og:url" content="https://excelsiorfan.work/" />
+  <meta property="og:image" content="/1000001231.webp" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SPIDER-MAN 4 — The Buzzard's Revenge" />
+  <meta name="twitter:description" content="Fan film: script excerpts, characters, and teaser trailer." />
+  <meta name="twitter:image" content="/1000001231.webp" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="/1000001231.webp" as="image" />
+
+  <!-- Tailwind CDN for quick dev; in production build your CSS -->
   <script defer src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
 
   <style>
+    /* Local font fallback */
     @font-face {
       font-family: 'Homoarakhan';
       src: url('/Homoarakhan.woff2') format('woff2'),
            url('/Homoarakhan.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
       font-display: swap;
     }
 
-    body {
-      background: url('1000001231.webp') center/cover fixed no-repeat;
-      color: white;
-      overflow-x: hidden;
-      font-family: ui-sans-serif, system-ui;
+    /* Color system & tokens */
+    :root {
+      --bg-dark: #000000;
+      --primary-red: #8B0000;
+      --primary-red-2: #CC0000;
+      --accent-blue: #0b2545;
+      --muted: #9CA3AF;
+      --card-glass: rgba(10,12,15,0.62);
+      --glass-border: rgba(255,255,255,0.06);
+      --metallic-sheen: linear-gradient(180deg,#ffffff 0%,#d4d4d4 40%,#8a8a8a 60%);
     }
 
-    /* DARK OVERLAY */
+    /* Base */
+    html, body {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-dark);
+      color: #ffffff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height: 1.4;
+    }
+
+    /* Background image + parallax feel */
+    .bg-hero {
+      background-image: url('/1000001231.webp');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    /* Dark overlay to preserve contrast */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.65);
+      background: rgba(0,0,0,0.58);
       z-index: -1;
     }
 
-    /* GLASS EFFECT */
-    .glass {
-      background: rgba(20, 20, 20, 0.65);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    /* TITLE SHINE */
-    .raimi-title {
-      background: linear-gradient(180deg,#fff 0%,#ddd 40%,#8a8a8a 60%);
+    /* Typography accents */
+    .raimi-title{
+      background: var(--metallic-sheen);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       filter: drop-shadow(0 0 6px rgba(0,0,0,0.7));
+      font-family: 'Homoarakhan', sans-serif;
+    }
+    .font-hero, .logo-text, .hero-title, h1.hero-title {
+      font-family: 'Homoarakhan', sans-serif;
     }
 
-    /* SCRIPT FIX */
+    /* Glass panel */
+    .glass-panel {
+      background: var(--card-glass);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--glass-border);
+    }
+
+    /* Navbar underline animation */
+    nav a {
+      position: relative;
+      text-decoration: none;
+      color: white;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      background: var(--primary-red-2);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.25s ease;
+    }
+    nav a:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* Script pre style (keeps samples tidy) */
     pre {
       white-space: pre-wrap;
       background: rgba(0,0,0,0.35);
       padding: 1rem;
       border-radius: 0.5rem;
-      margin-top: 0.5rem;
+      margin: 0;
+      font-family: inherit;
+      line-height: 1.55;
+      font-size: 1rem;
     }
 
-    /* PARALLAX LAYERS */
-    .parallax-bg {
-      background-attachment: fixed;
+    /* Small responsive tweak */
+    @media (max-width:640px){
+      .raimi-title{font-size:1.6rem}
     }
 
-    /* FADE ANIMATIONS */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp .9s forwards;
-    }
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    /* Mobile open/close icon defaults handled inline in markup */
   </style>
 </head>
+<body class="bg-hero web-bg min-h-screen flex flex-col" data-page="home">
 
-<body>
+  <!-- Accessible skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-black focus:px-3 focus:py-2 focus:rounded focus:text-white">Skip to content</a>
 
-  <!-- NAVBAR -->
-  <nav class="fixed top-0 w-full z-50 bg-black/60 backdrop-blur-lg border-b border-red-900/20">
-    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
+  <!-- NAVIGATION -->
+  <nav class="fixed w-full z-50 transition-all duration-300 bg-black/90 border-b border-red-900/20" role="navigation" aria-label="Main Navigation">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex-shrink-0 flex items-center gap-3">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2v20M2 12h20" stroke="#8B0000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/></svg>
+          <a href="#home" class="spidey-font raimi-title text-white text-lg md:text-xl font-black tracking-widest">SPIDER-MAN 4</a>
+        </div>
 
-      <!-- LOGO -->
-      <div class="flex items-center gap-3">
-        <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2v20M2 12h20" stroke="#CC0000" stroke-width="1.5"/>
-        </svg>
-        <span class="text-2xl font-bold tracking-wide">EXCELSIOR</span>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-6" role="menubar">
+            <a role="menuitem" href="#home" class="px-3 py-2 rounded-md text-sm font-medium tracking-wide hover:text-red-400 focus:outline-none">Home</a>
+            <a role="menuitem" href="#story" class="px-3 py-2 rounded-md text-sm font-medium tracking-wide hover:text-red-400 focus:outline-none">Synopsis</a>
+            <a role="menuitem" href="#script" class="px-3 py-2 rounded-md text-sm font-medium tracking-wide hover:text-red-400 focus:outline-none">Script</a>
+            <a role="menuitem" href="#cast" class="px-3 py-2 rounded-md text-sm font-medium tracking-wide hover:text-red-400 focus:outline-none">Characters</a>
+            <a role="menuitem" href="#trailer" class="px-3 py-2 rounded-md text-sm font-medium tracking-wide hover:text-red-400 focus:outline-none">Trailer</a>
+          </div>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="-mr-2 flex md:hidden">
+          <button id="mobile-toggle" aria-expanded="false" aria-controls="mobile-menu" class="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" aria-label="Open menu">
+            <svg id="mobile-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/></svg>
+            <svg id="mobile-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
       </div>
-
-      <!-- DESKTOP MENU -->
-      <div class="hidden md:flex space-x-8 text-lg">
-        <a href="#home" class="hover:text-red-400">Home</a>
-        <a href="#synopsis" class="hover:text-red-400">Synopsis</a>
-        <a href="#samples" class="hover:text-red-400">Samples</a>
-        <a href="#cast" class="hover:text-red-400">Cast</a>
-        <a href="#contact" class="hover:text-red-400">Contact</a>
-      </div>
-
-      <!-- MOBILE BUTTON -->
-      <button id="menuBtn" class="md:hidden text-white">
-        <i data-lucide="menu" class="w-8 h-8"></i>
-      </button>
-
     </div>
 
-    <!-- MOBILE MENU -->
-    <div id="mobileMenu" class="hidden md:hidden flex-col bg-black/80 backdrop-blur-lg px-6 pb-4 space-y-4">
-      <a href="#home" class="block text-lg hover:text-red-400">Home</a>
-      <a href="#synopsis" class="block text-lg hover:text-red-400">Synopsis</a>
-      <a href="#samples" class="block text-lg hover:text-red-400">Samples</a>
-      <a href="#cast" class="block text-lg hover:text-red-400">Cast</a>
-      <a href="#contact" class="block text-lg hover:text-red-400">Contact</a>
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-black/95 border-t border-red-900/20" aria-hidden="true">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium">Home</a>
+        <a href="#story" class="block px-3 py-2 rounded-md text-base font-medium">Synopsis</a>
+        <a href="#script" class="block px-3 py-2 rounded-md text-base font-medium">Script</a>
+        <a href="#cast" class="block px-3 py-2 rounded-md text-base font-medium">Characters</a>
+        <a href="#trailer" class="block px-3 py-2 rounded-md text-base font-medium">Trailer</a>
+      </div>
     </div>
   </nav>
 
-  <script>
-    /* MOBILE MENU JS */
-    const btn = document.getElementById("menuBtn");
-    const menu = document.getElementById("mobileMenu");
-    btn.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
-    });
-  </script>
+  <main id="main" class="flex-1">
 
-  <main class="pt-28">
+    <!-- HERO -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <div class="absolute inset-0 z-0" aria-hidden="true">
+        <picture aria-hidden="true">
+          <source srcset="/1000001231.webp" type="image/webp">
+          <img src="/1000001231.webp" alt="Spider-Man cinematic background" class="absolute inset-0 w-full h-full object-cover -z-10" loading="eager">
+        </picture>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-red-900/20 rounded-full blur-[130px]"></div>
+      </div>
 
-    <!-- HERO SECTION -->
-    <section id="home" class="min-h-screen flex items-center justify-center px-6 text-center parallax-bg">
-      <div class="glass p-12 rounded-2xl fade-up max-w-3xl">
-        <h1 class="text-6xl md:text-7xl font-bold raimi-title">SPIDER-MAN 4</h1>
-        <p class="text-xl md:text-2xl text-red-400 tracking-wide mt-4">THE BUZZARD'S REVENGE</p>
+      <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+        <div class="mb-6 flex justify-center floating-emblem" aria-hidden="true">
+          <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="#8B0000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Spider emblem">
+            <circle cx="12" cy="12" r="6" fill="#8B0000" fill-opacity="0.18"></circle>
+            <path d="M12 8V16M8 12H16" stroke="#fff" stroke-width="1.6"/>
+          </svg>
+        </div>
+
+        <p class="text-red-500 tracking-[0.3em] text-sm md:text-lg mb-2 uppercase font-bold">The Legend Returns</p>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-2 spidey-font tracking-tight raimi-title" style="font-family: 'Homoarakhan', serif;">SPIDER-MAN <span class="text-red-600">4</span></h1>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-200 mb-6 spidey-font tracking-tight">THE BUZZARD'S REVENGE</h2>
+
+        <p class="text-lg md:text-xl text-gray-400 mb-6 font-serif italic max-w-2xl mx-auto leading-relaxed">"You aren't a hero. You're intellectual property."</p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="#trailer" class="inline-flex items-center gap-3 raimi-gradient text-white px-6 py-3 rounded-md hover:scale-105 transition-transform duration-300 font-bold tracking-widest border border-red-500 shadow-[0_10px_30px_rgba(139,0,0,0.25)] focus:outline-none" role="button">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6.5 5.5v9l8-4.5-8-4.5z"/></svg>
+            WATCH TEASER
+          </a>
+
+          <a href="#script" class="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-gray-700 text-sm font-medium hover:bg-white/5 transition-colors focus:outline-none">Read Script Excerpt</a>
+        </div>
+
+        <div class="mt-10 text-gray-600 text-xs tracking-[0.2em] uppercase">Based on a fan script — non-commercial project</div>
       </div>
     </section>
 
-    <!-- SYNOPSIS -->
-    <section id="synopsis" class="py-24 px-6">
-      <div class="glass max-w-4xl mx-auto p-10 rounded-xl fade-up">
-        <h2 class="text-4xl mb-6 font-bold">Synopsis</h2>
-        <p class="text-gray-300 leading-relaxed text-lg">
-          Years after stepping away from the mask, Peter Parker lives a quiet life with MJ and their
-          children. But when former Oscorp engineer Adrian Toomes uncovers hidden truths behind the
-          abandoned spider project, his obsession turns to vengeance.
-        </p>
-        <p class="text-gray-300 mt-4 leading-relaxed text-lg">
-          With his family at risk, Peter must decide whether to hold onto peace…
-          or become Spider-Man one last time.
-        </p>
+    <!-- STORY / SYNOPSIS -->
+    <section id="story" class="py-20 relative border-t border-gray-900">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
+          <div class="order-2 md:order-1 relative">
+            <div class="glass-panel p-8 rounded-lg border-l-4 border-red-800">
+              <h3 class="cinematic-font text-2xl text-white mb-4">A FATHER'S FIGHT</h3>
+              <p class="text-gray-400 mb-6 leading-relaxed">Peter Parker is 38. The suit is a little loose in the shoulders, and the weather predicts the ache in his joints. He sits at the head of the table now, gray at the temples, a father to Benjy (7) and May (5). He has finally found warmth.</p>
+              <p class="text-gray-400 mb-6 leading-relaxed">But the silence of his retirement is broken when his Spider-sense screams—not a ring, but a headache.</p>
+              <p class="text-gray-400 leading-relaxed">Adrian Toomes, a brilliant but disgraced geneticist who wrote the original code for the spider program, has returned. He doesn't see a hero swinging through Queens. He sees a stolen specimen. And he's coming to "recall the product."</p>
+            </div>
+          </div>
+
+          <div class="order-1 md:order-2">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="h-px w-12 bg-red-600"></div>
+              <span class="text-red-500 uppercase tracking-widest text-sm font-bold">The Synopsis</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 cinematic-font text-white">TIME TO COME <span class="text-red-600">HOME</span></h2>
+            <p class="text-xl text-gray-300 leading-relaxed italic border-l-2 border-gray-700 pl-6 my-8">"Years after retiring the mask, Peter Parker lives a quiet life with MJ and their kids. But when former Oscorp engineer Adrian Toomes uncovers the truth behind the spider project, his obsession twists him into the Vulture — a vengeance-driven force targeting Peter’s past, present, and family."</p>
+            <p class="text-gray-500 text-lg">With his world collapsing, Peter must decide whether to remain the man he’s become… or embrace Spider-Man once more.</p>
+          </div>
+
+        </div>
       </div>
     </section>
 
-    <!-- SCRIPT SAMPLES -->
-    <section id="samples" class="py-24 px-6">
-      <div class="glass max-w-4xl mx-auto p-10 rounded-xl fade-up">
-        <h2 class="text-4xl mb-8 font-bold">Script Samples</h2>
-
-        <!-- SAMPLE 1 -->
-        <div class="mb-12">
-          <h3 class="text-2xl text-red-400 mb-2">Opening — Parker Family Dinner</h3>
-<pre>PETER catches a pea midair with a THWIP.
-
-MJ
-Peter. No Spider-Man stuff at the table.
-
-PETER
-Reflex! Blame the pea.</pre>
+    <!-- SCRIPT HIGHLIGHTS -->
+    <section id="script" class="py-20">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold cinematic-font mb-2 text-white">SCRIPT HIGHLIGHTS</h2>
+          <div class="w-16 h-1 bg-red-800 mx-auto"></div>
         </div>
 
-        <!-- SAMPLE 2 -->
-        <div class="mb-12">
-          <h3 class="text-2xl text-red-400 mb-2">First Vulture Encounter</h3>
-<pre>SPIDER-MAN cracks his back.
+        <!-- Scene 1 -->
+        <article class="glass-panel border border-gray-800 p-6 md:p-10 rounded-sm shadow-2xl mb-8" aria-labelledby="scene1">
+          <h3 id="scene1" class="sr-only">Scene: The Parker Dining Room</h3>
+          <div class="script-text text-sm md:text-base text-gray-300 space-y-4">
+            <p class="text-gray-500 uppercase text-xs tracking-widest mb-4">Scene: The Parker Dining Room</p>
+            <p>PETER PARKER (38) sits at the head of the table. It’s warm, chaotic, and lived-in. BENJY (7) flicks a pea. The pea arcs — the kind of tiny, domestic miracle that used to be his whole life.</p>
+            <p class="text-white">A tiny THWIP and Peter snags it midair without looking.</p>
+            <blockquote class="pl-8 border-l-2 border-gray-800">
+              <p class="text-red-400 font-bold">MJ</p>
+              <p>Peter. We talked about this. Not at the table.</p>
+            </blockquote>
+            <blockquote class="pl-8 border-l-2 border-gray-800">
+              <p class="text-blue-400 font-bold">PETER</p>
+              <p>(innocent, slightly awkward) I didn’t do it. It was... a reflex. Honestly. Total accident.</p>
+            </blockquote>
+          </div>
+        </article>
 
-SPIDER-MAN
-Yep. That's a storm coming—
+        <!-- Scene 2 -->
+        <article class="glass-panel border border-gray-800 p-6 md:p-10 rounded-sm shadow-2xl mb-8" aria-labelledby="scene2">
+          <h3 id="scene2" class="sr-only">Scene: NYC Rooftop - The Ambush</h3>
+          <div class="script-text text-sm md:text-base text-gray-300 space-y-4">
+            <p class="text-gray-500 uppercase text-xs tracking-widest mb-4">Scene: NYC Rooftop — The Ambush</p>
+            <p>WHAM! Spider-Man is yanked from the roof, dragged across gravel, and hurled into the open sky as Vulture makes his presence known.</p>
+            <div class="pl-8 border-l-2 border-gray-800">
+              <p class="text-blue-400 font-bold">SPIDER-MAN</p>
+              <p>(struggling, half-joking) Hey—! Whoa, hold on! Sir! You’re gonna tear your hydraulics flying this fast!</p>
+            </div>
+            <div class="pl-8 border-l-2 border-gray-800">
+              <p class="text-green-500 font-bold">VULTURE</p>
+              <p>(cold, amplified) Stop moving.</p>
+            </div>
+            <div class="pl-8 border-l-2 border-gray-800">
+              <p class="text-blue-400 font-bold">SPIDER-MAN</p>
+              <p>That’s it. No more NY pizza for you.</p>
+            </div>
+          </div>
+        </article>
 
-Vulture SNATCHES him upward.
-
-SPIDER-MAN
-Dude! Your hydraulics aren't rated for this speed!</pre>
-        </div>
-
-        <!-- SAMPLE 3 -->
-        <div>
-          <h3 class="text-2xl text-red-400 mb-2">Peter & MJ Breakdown</h3>
-<pre>PETER discovers Toomes’ file.
-
-PETER
-I just want to come home at the end of the day…
-
-MJ
-It’s okay to be scared.</pre>
-        </div>
+        <!-- Scene 3 (emotional) -->
+        <article class="glass-panel border border-gray-800 p-6 md:p-10 rounded-sm shadow-2xl mb-8" aria-labelledby="scene3">
+          <h3 id="scene3" class="sr-only">Scene: Parker House — Private</h3>
+          <div class="script-text text-sm md:text-base text-gray-300 space-y-4">
+            <p class="text-gray-500 uppercase text-xs tracking-widest mb-4">Scene: Parker House — Private</p>
+            <p>Peter discovers Toomes’ file late at night. The room spins; the past returns like a cut that won't stop bleeding.</p>
+            <p class="text-white">(whispers) Oh no…</p>
+            <p>He trembles.</p>
+            <p class="text-white">I just want to come home at the end of the day…</p>
+            <p>MJ holds him tight.</p>
+            <p class="text-red-400 font-bold">MJ</p>
+            <p>It’s okay to be scared.</p>
+          </div>
+        </article>
 
       </div>
     </section>
 
     <!-- CAST -->
-    <section id="cast" class="py-24 px-6">
-      <div class="glass max-w-4xl mx-auto p-10 rounded-xl text-center fade-up">
-        <h2 class="text-4xl mb-4 font-bold">Cast</h2>
-        <p class="text-gray-300 text-lg">Cast list coming soon.</p>
+    <section id="cast" class="py-20 border-t border-gray-900">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-5xl font-bold cinematic-font mb-4">THE CAST</h2>
+          <div class="w-24 h-1 bg-red-800 mx-auto"></div>
+        </div>
+
+        <ul class="grid grid-cols-1 md:grid-cols-3 gap-8" role="list">
+          <li class="glass-panel p-6 rounded-lg text-center group hover:border-blue-900 transition-colors duration-300">
+            <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gray-800 border-2 border-gray-700 overflow-hidden flex items-center justify-center relative" aria-hidden="true">
+              <svg class="w-12 h-12 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 14l9-5-9-5-9 5 9 5z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 cinematic-font">PETER PARKER</h3>
+            <p class="text-blue-500 text-sm tracking-wider uppercase mb-4">The Veteran</p>
+            <p class="text-gray-400 text-sm italic">"I'm just a guy trying to get home to his wife."</p>
+            <p class="text-gray-500 text-xs mt-2">Age 38. Graying. Alert.</p>
+          </li>
+
+          <li class="glass-panel p-6 rounded-lg text-center group hover:border-green-800 transition-colors duration-300">
+            <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gray-800 border-2 border-gray-700 overflow-hidden flex items-center justify-center relative" aria-hidden="true">
+              <svg class="w-12 h-12 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 2l4 20-8 0 4-20z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 cinematic-font">ADRIAN TOOMES</h3>
+            <p class="text-green-600 text-sm tracking-wider uppercase mb-4">The Creator</p>
+            <p class="text-gray-400 text-sm italic">"You are intellectual property. And I am recalling the product."</p>
+            <p class="text-gray-500 text-xs mt-2">Former Oscorp Geneticist.</p>
+          </li>
+
+          <li class="glass-panel p-6 rounded-lg text-center group hover:border-red-600 transition-colors duration-300">
+            <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gray-800 border-2 border-gray-700 overflow-hidden flex items-center justify-center relative" aria-hidden="true">
+              <svg class="w-12 h-12 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 12h14M12 5v14"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2 cinematic-font">MARY JANE</h3>
+            <p class="text-red-500 text-sm tracking-wider uppercase mb-4">The Anchor</p>
+            <p class="text-gray-400 text-sm italic">Knows the weight of the mask better than anyone.</p>
+            <p class="text-gray-500 text-xs mt-2">Mother to Benjy (7) and May (5).</p>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="py-24 px-6">
-      <div class="glass max-w-4xl mx-auto p-10 rounded-xl text-center fade-up">
-        <h2 class="text-4xl mb-4 font-bold">Contact</h2>
-        <p class="text-gray-300 text-lg">For inquiries, message through the campaign page.</p>
+    <!-- TRAILER / MEDIA -->
+    <section id="trailer" class="py-20">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold cinematic-font mb-2 text-white">OFFICIAL TEASER</h2>
+          <div class="w-16 h-1 bg-red-800 mx-auto"></div>
+        </div>
+
+        <div class="aspect-w-16 aspect-h-9 bg-black rounded overflow-hidden glass-panel p-2">
+          <!-- Replace VIDEO_ID with your YouTube/Vimeo id when ready -->
+          <iframe title="Teaser Trailer" class="w-full h-full" loading="lazy" src="https://www.youtube.com/embed/VIDEO_ID?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div class="mt-6 text-center">
+          <a href="https://www.indiegogo.com/" target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 border border-red-600 rounded-md bg-red-700 text-white font-semibold hover:brightness-110 transition">Support the Campaign</a>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <script>
-    /* SMOOTH SCROLL */
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener("click", e => {
-        const target = document.querySelector(link.getAttribute("href"));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: "smooth" });
-        }
+  <!-- FOOTER -->
+  <footer class="glass-panel py-12 border-t border-gray-900 mt-12">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col items-center gap-6">
+      <div class="flex items-center gap-2 mb-2 opacity-60">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2v20M2 12h20" stroke="#9CA3AF" stroke-width="1.2" opacity="0.6"/></svg>
+        <span class="cinematic-font font-bold text-base text-gray-400">THE BUZZARD'S REVENGE</span>
+      </div>
+
+      <div class="text-center text-gray-500 text-xs max-w-2xl">
+        <p class="mb-2">DISCLAIMER: This is a non-profit fan film website based on a fan script. Spider-Man is a trademark of Marvel Characters, Inc. and Sony Pictures.</p>
+        <p>&copy; <span id="year"></span> Excelsior Studios. All rights reserved.</p>
+      </div>
+
+      <div class="flex gap-4">
+        <a href="#" class="text-sm text-gray-400 hover:text-white">Privacy</a>
+        <a href="#" class="text-sm text-gray-400 hover:text-white">Terms</a>
+        <a href="#" class="text-sm text-gray-400 hover:text-white">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Minimal JS (deferred) -->
+  <script defer>
+    // Fill copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle with aria updates
+    const toggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const openIcon = document.getElementById('mobile-open');
+    const closeIcon = document.getElementById('mobile-close');
+    if(toggle){
+      toggle.addEventListener('click', ()=>{
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        mobileMenu.classList.toggle('hidden');
+        openIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    }
+
+    // Smooth scroll for internal anchors (prefers-reduced-motion respects)
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e){
+        const target = document.querySelector(this.getAttribute('href'));
+        if(!target) return;
+        if(prefersReduced) return; // don't animate if user prefers reduced motion
+        e.preventDefault();
+        target.scrollIntoView({behavior:'smooth', block:'start'});
       });
     });
+
+    // Lazy reveal animations using IntersectionObserver (simple)
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'none';
+          io.unobserve(entry.target);
+        }
+      });
+    },{threshold:0.12});
+
+    document.querySelectorAll('section').forEach(s=>{
+      s.style.opacity = 0;
+      s.style.transform = 'translateY(12px)';
+      s.style.transition = 'opacity 900ms cubic-bezier(.22,1,.36,1), transform 900ms cubic-bezier(.22,1,.36,1)';
+      io.observe(s);
+    });
+
+    // Add lightweight animation class (fallback)
+    const style = document.createElement('style');
+    style.innerHTML = `@keyframes fadeIn {from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}`;
+    document.head.appendChild(style);
+
+    // Performance note for production: pre-build Tailwind, inline critical CSS, and optimize images.
   </script>
 
+  <noscript>
+    <style> .glass-panel{background:rgba(12,12,12,0.9);backdrop-filter:none} </style>
+    <div class="fixed bottom-4 right-4 bg-red-800 text-white p-3 rounded">JavaScript disabled — some interactions disabled.</div>
+  </noscript>
+
 </body>
-</html>
+  </html>
