@@ -29,6 +29,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <link rel="preload" href="/1000001231.webp" as="image">
+  <!-- Preload font for faster paint (ensure filename and case match exactly in your repo root) -->
+  <link rel="preload" href="/Homoarakhan.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/Homoarakhan.woff" as="font" type="font/woff" crossorigin>
 
   <!-- Minimal Tailwind via CDN (keeps development fast). For production consider building with PurgeCSS) -->
   <script defer src="https://cdn.tailwindcss.com"></script>
@@ -38,7 +41,8 @@
   <style>
     @font-face {
             font-family: 'Homoarakhan';
-            src: url('/Homoarakhan.woff2') format('woff2'),
+            src: local('Homoarakhan'), local('Homoarakhan-Regular'),
+                 url('/Homoarakhan.woff2') format('woff2'),
                  url('/Homoarakhan.woff') format('woff');
             font-weight: normal;
             font-style: normal;
