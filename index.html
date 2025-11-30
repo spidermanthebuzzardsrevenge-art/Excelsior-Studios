@@ -17,18 +17,15 @@
   <meta property="og:title" content="SPIDER-MAN 4 — The Buzzard's Revenge (Fan Film)" />
   <meta property="og:description" content="Fan film short and script highlights from Excelsior Studios. Non-commercial fan project." />
   <meta property="og:url" content="https://excelsiorfan.work/" />
-  <!-- Fixed path: Removed leading slash -->
-  <meta property="og:image" content="1000001231.webp" />
+  <meta property="og:image" content="https://excelsiorfan.work/assets/1000001231.webp" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="SPIDER-MAN 4 — The Buzzard's Revenge" />
   <meta name="twitter:description" content="Fan film: script excerpts, characters, and teaser trailer." />
-  <!-- Fixed path: Removed leading slash -->
-  <meta name="twitter:image" content="1000001231.webp" />
+  <meta name="twitter:image" content="https://excelsiorfan.work/assets/1000001231.webp" />
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Fixed path: Removed leading slash -->
-  <link rel="preload" href="1000001231.webp" as="image" />
+  <link rel="preload" href="assets/1000001231.webp" as="image" />
 
   <script>
     tailwind.config = {
@@ -41,7 +38,7 @@
   <style>
     @font-face {
       font-family: 'Homoarakhan';
-      /* Fixed paths: Removed leading slash */
+      /* Ensure fonts are also in assets or update this path if needed */
       src: url('Homoarakhan.woff2') format('woff2'),
            url('Homoarakhan.woff') format('woff');
       font-weight: normal;
@@ -71,8 +68,8 @@
     }
 
     .bg-hero {
-      /* FIXED: Removed the leading slash so it works locally */
-      background-image: url('1000001231.webp');
+      /* FIXED: Updated path to look in 'assets' folder */
+      background-image: url('assets/1000001231.webp');
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -338,12 +335,9 @@ Look, I don’t know who you are, but this is dangerous! That harness isn't stab
         <h2 class="text-3xl font-bold mb-2">OFFICIAL TEASER</h2>
         <div class="w-16 h-1 bg-red-800 mx-auto mb-8"></div>
 
-        <!-- Coming Soon Card with FIXED Image path -->
         <div class="relative w-full aspect-video rounded-lg overflow-hidden border border-red-900/30 shadow-2xl bg-black">
-          <!-- Background Image FIXED: Removed leading slash -->
-          <div class="absolute inset-0 bg-cover bg-center blur-sm opacity-40 scale-105" style="background-image: url('1000001231.webp');"></div>
+          <div class="absolute inset-0 bg-cover bg-center blur-sm opacity-40 scale-105" style="background-image: url('assets/1000001231.webp');"></div>
           
-          <!-- Text Overlay -->
           <div class="absolute inset-0 flex flex-col items-center justify-center z-10">
             <div class="p-8 border border-white/10 bg-black/60 backdrop-blur-md rounded-xl shadow-lg">
               <h3 class="text-3xl md:text-5xl font-black text-white tracking-widest uppercase raimi-title">Coming Soon</h3>
@@ -399,5 +393,3 @@ Look, I don’t know who you are, but this is dangerous! That harness isn't stab
 
 </body>
 </html>
-
-
