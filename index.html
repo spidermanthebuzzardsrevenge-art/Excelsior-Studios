@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#050505" />
 
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
   <title>Spider-Man 4: The Buzzard's Revenge | Fan Film — Excelsior Studios</title>
 
@@ -17,15 +17,18 @@
   <meta property="og:title" content="SPIDER-MAN 4 — The Buzzard's Revenge (Fan Film)" />
   <meta property="og:description" content="Fan film short and script highlights from Excelsior Studios. Non-commercial fan project." />
   <meta property="og:url" content="https://excelsiorfan.work/" />
-  <meta property="og:image" content="/1000001231.webp" />
+  <!-- Fixed path: Removed leading slash -->
+  <meta property="og:image" content="1000001231.webp" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="SPIDER-MAN 4 — The Buzzard's Revenge" />
   <meta name="twitter:description" content="Fan film: script excerpts, characters, and teaser trailer." />
-  <meta name="twitter:image" content="/1000001231.webp" />
+  <!-- Fixed path: Removed leading slash -->
+  <meta name="twitter:image" content="1000001231.webp" />
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="/1000001231.webp" as="image" />
+  <!-- Fixed path: Removed leading slash -->
+  <link rel="preload" href="1000001231.webp" as="image" />
 
   <script>
     tailwind.config = {
@@ -38,8 +41,9 @@
   <style>
     @font-face {
       font-family: 'Homoarakhan';
-      src: url('/Homoarakhan.woff2') format('woff2'),
-           url('/Homoarakhan.woff') format('woff');
+      /* Fixed paths: Removed leading slash */
+      src: url('Homoarakhan.woff2') format('woff2'),
+           url('Homoarakhan.woff') format('woff');
       font-weight: normal;
       font-style: normal;
       font-display: swap;
@@ -67,7 +71,8 @@
     }
 
     .bg-hero {
-      background-image: url('/1000001231.webp');
+      /* FIXED: Removed the leading slash so it works locally */
+      background-image: url('1000001231.webp');
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -333,10 +338,10 @@ Look, I don’t know who you are, but this is dangerous! That harness isn't stab
         <h2 class="text-3xl font-bold mb-2">OFFICIAL TEASER</h2>
         <div class="w-16 h-1 bg-red-800 mx-auto mb-8"></div>
 
-        <!-- REPLACED VIDEO PLAYER WITH COMING SOON CARD -->
+        <!-- Coming Soon Card with FIXED Image path -->
         <div class="relative w-full aspect-video rounded-lg overflow-hidden border border-red-900/30 shadow-2xl bg-black">
-          <!-- Background Image (Existing asset) -->
-          <div class="absolute inset-0 bg-cover bg-center blur-sm opacity-40 scale-105" style="background-image: url('/1000001231.webp');"></div>
+          <!-- Background Image FIXED: Removed leading slash -->
+          <div class="absolute inset-0 bg-cover bg-center blur-sm opacity-40 scale-105" style="background-image: url('1000001231.webp');"></div>
           
           <!-- Text Overlay -->
           <div class="absolute inset-0 flex flex-col items-center justify-center z-10">
@@ -350,7 +355,6 @@ Look, I don’t know who you are, but this is dangerous! That harness isn't stab
         <div class="mt-10">
            <p class="text-gray-400 italic mb-4">Join the mailing list to be notified when the trailer drops.</p>
            
-           <!-- UPDATED: LINKED TO waitlist.html -->
            <a href="waitlist.html" class="inline-block px-8 py-3 bg-red-800 hover:bg-red-700 text-white font-bold rounded-md transition border border-red-900">
              Get Notified
            </a>
@@ -395,4 +399,5 @@ Look, I don’t know who you are, but this is dangerous! That harness isn't stab
 
 </body>
 </html>
+
 
