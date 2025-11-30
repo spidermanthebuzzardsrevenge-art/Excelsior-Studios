@@ -44,10 +44,70 @@
             font-style: normal;
             font-display: swap;
         }
-body {
+        /* Apply Homoarakhan ONLY to logo, titles, and selected elements */
+        .font-hero, .logo-text, h1.hero-title, .title-stylized {
             font-family: 'Homoarakhan', sans-serif;
         }
+body {
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
     </style>
+  
+  <style>
+    /* Unified color system */
+    :root{
+      --bg-dark: #050505;           /* page background */
+      --primary-red: #8B0000;      /* main Raimi red */
+      --primary-red-2: #CC0000;    /* brighter accent red */
+      --accent-blue: #0b2545;      /* deep navy for contrast */
+      --muted: #9CA3AF;            /* neutral text */
+      --card-glass: rgba(10,12,15,0.62);
+      --glass-border: rgba(255,255,255,0.06);
+      --metallic-sheen: linear-gradient(180deg,#ffffff 0%,#d4d4d4 40%,#8a8a8a 60%);
+    }
+
+    /* Apply background / body color consistently */
+    body{background-color:var(--bg-dark);color:#e6e6e6}
+
+    /* Title / logo styling */
+    .raimi-title{background:var(--metallic-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 6px rgba(0,0,0,0.7))}
+    h1.hero-title, .logo-text, .font-hero{font-family:'Homoarakhan',sans-serif;color:var(--primary-red-2)}
+
+    /* Gradient button and accent */
+    .raimi-gradient{background:linear-gradient(135deg,var(--primary-red) 0%, #3a0000 100%);border:1px solid rgba(204,0,0,0.15)}
+    a[role="button"], .raimi-cta{background:linear-gradient(135deg,var(--primary-red),var(--primary-red-2));color:#fff}
+
+    /* Glass panels / cards */
+    .glass-panel{background:var(--card-glass);backdrop-filter:blur(8px);border:1px solid var(--glass-border)}
+
+    /* Headings and section accents */
+    .cinematic-font, h2, h3{color:#f3f3f3}
+    .section-accent{color:var(--primary-red)}
+
+    /* Links */
+    a{color:var(--muted)}
+    a:hover{color:var(--primary-red-2)}
+
+    /* Cast badges */
+    .text-blue-500{color:var(--accent-blue)!important}
+    .text-red-500{color:var(--primary-red)!important}
+    .text-green-600{color:#7fb069!important}
+
+    /* Borders and separators */
+    .border-red-800{border-color:rgba(139,0,0,0.55)!important}
+    .border-gray-900{border-color:rgba(18,18,18,0.8)!important}
+
+    /* Hero subtitle and microcopy */
+    .hero-sub{color:var(--muted)}
+
+    /* Ensure SVG strokes match palette when using currentColor */
+    svg[role="img"] path, svg[role="img"] circle{stroke:var(--primary-red)}
+
+    /* Small responsive tweak */
+    @media (max-width:640px){
+      .raimi-title{font-size:1.6rem}
+    }
+  </style>
 </head>
 <body class="web-bg min-h-screen flex flex-col" data-page="home">
 
